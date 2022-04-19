@@ -1,0 +1,118 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+ 
+  <mirrors>
+ 
+    <mirror>
+      <id>central-repository</id>
+      <mirrorOf>*,!openapiosp-group,!openapiosp-releases,!openapiosp-snapshots</mirrorOf>
+      <name>Maven Central Repository</name>
+      <url>https://artifactsrepository-tc.shared-nonprod.cloud.si.orange.es/artifactory/thirdparties-group/</url>
+    </mirror>
+ 
+  </mirrors>
+ 
+  <profiles>
+    <profile>
+      <id>orange-openapi-artifactory</id>
+      <repositories>
+ 
+        <repository>
+          <id>openapiosp-group</id>
+          <url>https://artifactsrepository-tc.shared-nonprod.cloud.si.orange.es/artifactory/openapiosp-group/</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+          </snapshots>
+        </repository>
+ 
+        <repository>
+          <id>openapiosp-releases</id>
+          <url>https://artifactsrepository-tc.shared-nonprod.cloud.si.orange.es/artifactory/openapiosp-releases/</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+        </repository>
+ 
+        <repository>
+          <id>openapiosp-snapshots</id>
+          <url>https://artifactsrepository-tc.shared-nonprod.cloud.si.orange.es/artifactory/openapiosp-snapshots/</url>
+          <releases>
+            <enabled>false</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+          </snapshots>
+        </repository>
+ 
+        <repository>
+          <id>openapiosp-thirdparties</id>
+          <url>https://artifactsrepository-tc.shared-nonprod.cloud.si.orange.es/artifactory/openapiosp-thirdparties/</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+        </repository>
+ 
+      </repositories>
+    </profile>
+ 
+    <profile>
+      <id>orange-openapi-nexus</id>
+ 
+      <repositories>
+ 
+        <repository>
+          <id>openapiosp-releases</id>
+          <url>https://artifactsrepository-soe-tc.shared-nonprod.cloud.si.orange.es/nexus/content/repositories/openapiosp-releases/</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+        </repository>
+ 
+        <repository>
+          <id>openapiosp-thirdparties</id>
+          <url>https://artifactsrepository-soe-tc.shared-nonprod.cloud.si.orange.es/nexus/content/repositories/openapiosp-thirdparties/</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+        </repository>
+ 
+        <repository>
+          <id>openapiosp-snapshots</id>
+          <url>https://artifactsrepository-soe-tc.shared-nonprod.cloud.si.orange.es/nexus/content/repositories/openapiosp-snapshots/</url>
+          <releases>
+            <enabled>false</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </repository>
+ 
+      </repositories>
+    </profile>
+  </profiles>
+ 
+  <activeProfiles>
+    <!--
+        <activeProfile>orange-openapi-nexus</activeProfile>
+        -->
+    <activeProfile>orange-openapi-artifactory</activeProfile>
+  </activeProfiles>
+ 
+</settings>
