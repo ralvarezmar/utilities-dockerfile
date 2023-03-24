@@ -59,10 +59,6 @@ RUN sudo chmod +x /tmp/user/*.sh \
 
 WORKDIR "/home/${USERNAME}"
 
-# Install private key
-COPY config/gpg/sops-key.asc sops-key.asc
-RUN gpg --import sops-key.asc \
-    && rm sops-key.asc
 
 # Maven settings
 COPY config/settings.xml .m2/settings.xml

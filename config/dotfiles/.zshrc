@@ -117,15 +117,3 @@ kconfig () {
 source kube-ps1.sh
 setopt prompt_subst # para que la variable KUBE_ENV cambie al cambiar su valor
 PROMPT='$(kube_env)$(kube_ps1)'$PROMPT
-
-
-helm_version(){
-  local version=$1
-  [[ ${version} =~ ^(2|3)$ ]] || (echo "version: [${version}] not allowed" >&2 && exit 1)
-
-  HELM_VERSION="MYBASTION_HELM${version}_VERSION"
-
-  sudo ln -sf "/usr/local/bin/helm-binaries/$(eval echo "\$${HELM_VERSION}")/helm" /usr/local/bin/helm
-}
-
-helm_version 3
